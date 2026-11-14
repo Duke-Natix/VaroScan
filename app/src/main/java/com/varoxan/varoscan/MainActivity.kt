@@ -86,8 +86,8 @@ class MainActivity : Activity() {
         }
 
         val scroll = ScrollView(this).apply {
-            setBackgroundColor(background)
-            fillViewport = true
+            setBackgroundColor(this@MainActivity.background)
+            isFillViewport = true
         }
         val column = LinearLayout(this).apply {
             orientation = LinearLayout.VERTICAL
@@ -155,7 +155,7 @@ class MainActivity : Activity() {
             text = name
             isAllCaps = false
             textSize = 12f
-            setTextColor(background)
+            setTextColor(this@MainActivity.background)
             backgroundTintList = ColorStateList.valueOf(primary)
             setOnClickListener { onClick() }
         }
