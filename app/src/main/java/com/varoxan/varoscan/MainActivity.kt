@@ -182,8 +182,8 @@ class MainActivity : Activity() {
         val warningCount = snapshots.sumOf { it.findings.count { f -> f.severity != Severity.INFO } }
         val count = snapshots.sumOf { it.measurements.size }
         val moment = SimpleDateFormat("HH:mm:ss", Locale.GERMANY).format(Date())
-        summary.text = "$" + count + " Messwerte  ·  $" + warningCount +
-            " Hinweise  ·  Stand $" + moment + "\nKeine Warnung bedeutet NICHT, dass alle Geräte fehlerfrei sind."
+        summary.text = "$count Messwerte  ·  $warningCount Hinweise  ·  Stand $moment\n" +
+            "Keine Warnung bedeutet NICHT, dass alle Geräte fehlerfrei sind."
         renderFindings()
         renderModules()
         if (::scanner.isInitialized) renderBle()

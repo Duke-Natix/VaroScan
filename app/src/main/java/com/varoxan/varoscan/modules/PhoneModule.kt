@@ -41,7 +41,7 @@ class PhoneModule : DiagnosticModule {
             }
             val millivolts = battery.getIntExtra(BatteryManager.EXTRA_VOLTAGE, -1)
             if (millivolts > 0)
-                measurements += Measurement("Akku-Spannung", "$" + millivolts + " mV", "ACTION_BATTERY_CHANGED")
+                measurements += Measurement("Akku-Spannung", "$millivolts mV", "ACTION_BATTERY_CHANGED")
             val status = when (battery.getIntExtra(BatteryManager.EXTRA_STATUS, -1)) {
                 BatteryManager.BATTERY_STATUS_CHARGING -> "Wird geladen"
                 BatteryManager.BATTERY_STATUS_FULL -> "Voll"
